@@ -1,4 +1,5 @@
 import Plants from "./plants";
+import Cart from "./Cart";
 
 export default function App() {
   return (
@@ -8,6 +9,7 @@ export default function App() {
       </header>
       <main>
         <Plants></Plants>
+        <Cart></Cart>
       </main>
     </section>
   );

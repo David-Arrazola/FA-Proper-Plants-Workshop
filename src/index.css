@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.plants {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 3px;
+}
+
+.plants li {
+  display: grid;
+  gap: 2px;
+  border-width: 1px;
+  border-color: lightgray;
+  border-style: solid;
+  /* border: 1px lightgray solid; */
+}
+
+.plants li span {
+  justify-self: center;
+  font-size: 50px;
+}
+
+.plantImage {
+  width: auto;
+}
