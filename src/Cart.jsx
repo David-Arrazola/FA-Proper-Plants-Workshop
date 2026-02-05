@@ -1,4 +1,4 @@
-import { addOrSubCount } from "./plants";
+import { addOrSubCount } from "./App";
 
 export default function Cart({ cart, setCart }) {
   return (
