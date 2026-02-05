@@ -20,7 +20,8 @@ main {
   gap: 2px;
   border-width: 1px;
   border-color: lightgray;
-  border-style: solid;
+  border-radius: 5px;
+  border-style: outset;
   /* border: 1px lightgray solid; */
 }
 

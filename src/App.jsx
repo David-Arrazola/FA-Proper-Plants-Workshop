@@ -10,7 +10,7 @@ export default function App() {
         <h1>Proper Plants</h1>
       </header>
       <main>
-        <Plants currCart={cart} setCart={setCart}></Plants>
+        <Plants cart={cart} setCart={setCart}></Plants>
         <Cart cart={cart}></Cart>
       </main>
     </section>
