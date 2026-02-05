@@ -30,7 +30,7 @@ function buttonHandler(cart, setCart, currPlant) {
   //* be updated with new array with old data and new plant object
 
   cart.some((cartItem) => cartItem.name === currPlant.name)
-    ? setCart(addQuantity(cart, currPlant)) //* setting "cart" to the return of "addQuantity"
+    ? setCart(addOrSubCount(cart, currPlant, "Add")) //* setting "cart" to the return of "addQuantity"
     : setCart([
         ...cart,
         {
@@ -41,12 +41,23 @@ function buttonHandler(cart, setCart, currPlant) {
       ]);
 }
 
-export function addQuantity(plantArr, plantToAdd) {
-  const clonedPlantArr = [...plantArr];
+export function addOrSubCount(plantArr, plantToModify, action) {
+  let clonedPlantArr = [...plantArr];
 
-  for (const currPlant of clonedPlantArr) {
-    if (currPlant.name === plantToAdd.name) {
-      currPlant.count++;
+  for (let i = 0; i < plantArr.length; i++) {
+    // Checking if name of current iterated object is the same as "plantToModify"
+    if (plantArr[i].name === plantToModify.name && action === "Add") {
+      // if user chooses to "Add" quantity of plant, "count" will be raised by 1
+      plantArr[i].count++;
+      // This will activate if user chooses to "Sub" quantity of "PlantToModify"
+    } else if (plantArr[i].name === plantToModify.name && action === "Sub") {
+      /* Ternary checks "plantToModify"'s count number, if greater than 0, count if lowered.
+        If count is zero then "plantToAdd" will be removed from cloned array*/
+      plantArr[i].count > 1
+        ? plantArr[i].count--
+        : (clonedPlantArr = clonedPlantArr.filter(
+            (currPlant) => currPlant.name != plantArr[i].name,
+          ));
     }
   }
   return clonedPlantArr;

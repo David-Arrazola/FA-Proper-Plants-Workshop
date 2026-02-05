@@ -11,7 +11,7 @@ export default function App() {
       </header>
       <main>
         <Plants cart={cart} setCart={setCart}></Plants>
-        <Cart cart={cart}></Cart>
+        <Cart cart={cart} setCart={setCart}></Cart>
       </main>
     </section>
   );

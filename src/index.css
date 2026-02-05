@@ -5,31 +5,60 @@
 
 main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 60% 40%;
+  gap: 10%;
+  margin-left: 5%;
 }
 
 .plants {
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(3, auto);
-  gap: 3px;
+  gap: 10px;
 }
 
 .plants li {
   display: grid;
-  gap: 2px;
+  gap: 10px;
   border-width: 1px;
   border-color: lightgray;
   border-radius: 5px;
   border-style: outset;
-  /* border: 1px lightgray solid; */
+  padding: 2%;
 }
 
 .plants li span {
   justify-self: center;
-  font-size: 50px;
+  font-size: 100px;
 }
 
-.plantImage {
-  width: auto;
+.cart {
+  display: grid;
+  gap: 10px;
+  height: fit-content;
+  width: 60%;
+  list-style-type: none;
+}
+
+.cart li {
+  display: grid;
+  gap: 20px;
+  border-style: outset;
+  border-width: 1px;
+  border-color: lightgray;
+  border-radius: 5px;
+  padding: 2%;
+}
+
+.cartPlantNameAndImage {
+  display: flex;
+}
+
+.cartPlantCount {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+
+.cartPlantCount p {
+  justify-self: center;
 }

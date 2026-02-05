@@ -1,17 +1,27 @@
-export default function Cart({ cart }) {
+import { addOrSubCount } from "./plants";
+
+export default function Cart({ cart, setCart }) {
   return (
-    <ul>
+    <ul className="cart">
       <h2>Cart</h2>
       {cart.map((currItem) => (
         <li key={currItem.name}>
-          <section>
+          <section className="cartPlantNameAndImage">
             <span>{currItem.image}</span>
             <h3>{currItem.name}</h3>
           </section>
-          <section>
-            <button>-</button>
-            {currItem.count}
-            <button>+</button>
+          <section className="cartPlantCount">
+            <button
+              onClick={() => setCart(addOrSubCount(cart, currItem, "Sub"))}
+            >
+              -
+            </button>
+            <p>{currItem.count}</p>
+            <button
+              onClick={() => setCart(addOrSubCount(cart, currItem, "Add"))}
+            >
+              +
+            </button>
           </section>
         </li>
       ))}
